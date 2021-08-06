@@ -1,18 +1,22 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
+
 //STYLESHEET
 import "../stylesheets/App.scss";
 
-function App() {
-  //STATES
+const queensURL = "http://www.nokeynoshade.party/api/queens/";
 
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-      </header>
-    </div>
-  );
+function App() {
+  const [queens, setQueens] = useState(null);
+
+  useEffect(() => {
+    axios.get(queensURL).then((response) => {
+      setQueens(response.data);
+    });
+  }, []);
+
+  if (!queens) return null;
+  return console.log({ queens });
 }
 
 export default App;
