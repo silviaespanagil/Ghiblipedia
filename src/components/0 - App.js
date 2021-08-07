@@ -1,15 +1,11 @@
 //COMPONENTS
-import QueensList from "./1- QueensList";
+import Main from "./2-Main";
 
 //STYLESHEET
 import "../stylesheets/App.scss";
 
 function App() {
-  return (
-    <main className="main">
-      <QueensList />
-    </main>
-  );
+  return <Main />;
 }
 
 export default App;
