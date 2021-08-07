@@ -6,7 +6,7 @@ import "../stylesheets/App.scss";
 
 function App() {
   return (
-    <main>
+    <main className="main">
       <QueensList />
     </main>
   );

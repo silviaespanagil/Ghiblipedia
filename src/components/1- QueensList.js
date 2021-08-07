@@ -21,15 +21,18 @@ const QueensList = () => {
 
   const allQueens = queens.map((queen) => {
     return (
-      <article key={queen.id}>
-        <img src={queen.image_url} alt={`"Portrait of "${queen.name}`} />
-        <h2>{queen.name}</h2>
-        <p>{queen.quote}</p>
+      <article key={queen.id} className="queensList__card">
+        <img
+          src={queen.image_url}
+          alt={`"Portrait of "${queen.name}`}
+          className="queensList__card--img"
+        />
+        <h2 className="queensList__card--name">{queen.name}</h2>
       </article>
     );
   });
 
-  return <section>{allQueens}</section>;
+  return <section className="queensList">{allQueens}</section>;
 };
 
 export default QueensList;
