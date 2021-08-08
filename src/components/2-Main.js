@@ -44,6 +44,12 @@ const Main = () => {
     }
   };
 
+  //RESET USER SEARCH
+
+  const handleResetSearch = () => {
+    return setFilterQueen("");
+  };
+
   // RENDERS
 
   //RENDERFILTERS
@@ -54,7 +60,11 @@ const Main = () => {
   return (
     <main className="main">
       <SearchArea handleFilter={handleFilter} userSearch={filterQueen} />
-      <QueensList queens={renderFilter} userSearch={filterQueen} />
+      <QueensList
+        queens={renderFilter}
+        userSearch={filterQueen}
+        resetSearch={handleResetSearch}
+      />
     </main>
   );
 };

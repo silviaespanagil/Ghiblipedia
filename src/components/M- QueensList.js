@@ -6,7 +6,9 @@ const QueensList = (props) => {
   //RENDER QUEENS
 
   if (props.queens.length === 0) {
-    return <NoQueen userSearch={props.userSearch} />;
+    return (
+      <NoQueen userSearch={props.userSearch} resetSearch={props.resetSearch} />
+    );
   }
 
   const allQueens = props.queens.map((queen) => {
