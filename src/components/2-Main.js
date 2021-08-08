@@ -22,9 +22,9 @@ const Main = () => {
 
   //METHODS
 
-  //HEARING SEARCH INPUT
+  //LISTEN SEARCH INPUT
   const userSearch = (e) => {
-    setFilterQueen(e.target.value);
+    setFilterQueen(e.target.value.toLowerCase());
   };
   return (
     <main className="main">
