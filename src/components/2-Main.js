@@ -34,7 +34,7 @@ const Main = () => {
 
   if (!queens) return null;
 
-  //METHODS
+  //HANDLERS
 
   //HANDLE  FILTER
 
@@ -43,10 +43,18 @@ const Main = () => {
       setFilterQueen(filterData.searchValue);
     }
   };
+
+  // RENDERS
+
+  //RENDERFILTERS
+  const renderFilter = queens.filter((queen) => {
+    return queen.name.toLowerCase().includes(filterQueen.toLowerCase());
+  });
+
   return (
     <main className="main">
       <SearchArea handleFilter={handleFilter} userSearch={filterQueen} />
-      <QueensList queens={queens} />
+      <QueensList queens={renderFilter} userSearch={filterQueen} />
     </main>
   );
 };

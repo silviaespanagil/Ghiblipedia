@@ -1,5 +1,10 @@
 const QueensList = (props) => {
   //RENDER QUEENS
+
+  if (props.queens.length === 0) {
+    return <p>Nada</p>;
+  }
+
   const allQueens = props.queens.map((queen) => {
     return (
       <article key={queen.id} className="queensList__card">
