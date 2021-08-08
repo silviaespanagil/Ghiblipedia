@@ -1,0 +1,15 @@
+@mixin buttonLink() {
+  padding: 10px;
+  font-size: 0.7rem;
+  border-radius: 50px;
+  text-transform: uppercase;
+  font-weight: 500;
+  background-color: $colorBlue;
+  box-shadow: 3px 3px 10px $colorFucshia;
+  &:hover {
+    background-color: $colorFucshia;
+    box-shadow: 3px 3px 10px $colorBlue;
+    color: $colorIce;
+    transform: scale(1.09);
+  }
+}

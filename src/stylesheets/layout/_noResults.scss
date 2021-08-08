@@ -1,0 +1,27 @@
+.noResults {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 0 15%;
+  &__text {
+    position: absolute;
+    color: $colorIce;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background-color: rgba(27, 27, 27, 0.5);
+    width: 70%;
+    text-align: center;
+    &--name {
+      color: $colorPink;
+    }
+  }
+  &__img {
+    width: 100%;
+  }
+  &__back {
+    margin: 20px 0;
+    @include buttonLink();
+  }
+}

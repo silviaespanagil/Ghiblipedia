@@ -5,7 +5,8 @@ const NoQueen = (props) => {
   return (
     <section className="noResults">
       <p className="noResults__text">
-        There is no Queen called <span>{props.userSearch}</span>
+        There is no Queen called{" "}
+        <span className="noResults__text--name">{props.userSearch}</span>
       </p>
       <img
         src={NoResults}
