@@ -1,4 +1,11 @@
 const SearchArea = (props) => {
+  //LISTEN SEARCH INPUT
+  const handleSearchBox = (e) => {
+    props.handleFilter({
+      searchValue: e.target.value.toLowerCase(),
+      key: "name",
+    });
+  };
   return (
     <section className="searchArea">
       <form className="searchArea__form">
@@ -8,7 +15,8 @@ const SearchArea = (props) => {
             type="search"
             placeholder="Search a queen or season"
             className="searchArea__form--search-input"
-            onChange={props.userSearch}
+            value={props.userSearch}
+            onChange={handleSearchBox}
           />
         </label>
       </form>

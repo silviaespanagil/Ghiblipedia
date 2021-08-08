@@ -9,8 +9,8 @@ import QueensList from "./M- QueensList";
 import SearchArea from "./M - SearchArea";
 
 const Main = () => {
-  const localQueens = localStorage.get("Queens:", []);
-  const localUserSearch = localStorage.get("User Last Search:", "");
+  const localQueens = localStorage.get("Queens", []);
+  const localUserSearch = localStorage.get("User Search", "");
 
   //STATES
   const [queens, setQueens] = useState(localQueens);
@@ -36,13 +36,16 @@ const Main = () => {
 
   //METHODS
 
-  //LISTEN SEARCH INPUT
-  const userSearch = (e) => {
-    setFilterQueen(e.target.value.toLowerCase());
+  //HANDLE  FILTER
+
+  const handleFilter = (filterData) => {
+    if (filterData.key === "name") {
+      setFilterQueen(filterData.searchValue);
+    }
   };
   return (
     <main className="main">
-      <SearchArea />
+      <SearchArea handleFilter={handleFilter} userSearch={filterQueen} />
       <QueensList queens={queens} />
     </main>
   );
