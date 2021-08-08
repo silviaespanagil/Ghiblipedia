@@ -6,7 +6,19 @@
   &__menu {
     display: none;
     @include tablet() {
-      display: flex;
+      display: block;
+    }
+    &--list {
+      @include tablet() {
+        height: 60px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+    &--item {
+      padding-right: 20px;
+      text-transform: uppercase;
     }
   }
 }
