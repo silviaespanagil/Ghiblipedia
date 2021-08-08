@@ -1,5 +1,9 @@
 const SearchArea = () => {
-  return <p>Search Area</p>;
+  return (
+    <section className="searchArea">
+      <p>Search Area</p>
+    </section>
+  );
 };
 
 export default SearchArea;

@@ -20,8 +20,8 @@ const Main = () => {
   if (!queens) return null;
   return (
     <main className="main">
-      <QueensList queens={queens} />
       <SearchArea />
+      <QueensList queens={queens} />
     </main>
   );
 };

@@ -1,6 +1,3 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-
 const QueensList = (props) => {
   //RENDER QUEENS
   const allQueens = props.queens.map((queen) => {

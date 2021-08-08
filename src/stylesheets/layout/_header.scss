@@ -2,7 +2,7 @@
   height: 60px;
   display: flex;
   justify-content: space-between;
-  background-color: $colorBlue;
+  background-color: $colorFucshia;
   &__menu {
     display: none;
     @include tablet() {
