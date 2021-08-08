@@ -1,3 +1,6 @@
+//COMPONENTS
+import BurgerMenu from "./H - BurgerMenu";
+
 //IMAGES
 import logo from "../images/ruLogo.png";
 
@@ -11,23 +14,25 @@ const Header = () => {
     { item: "Favs", path: "/favorites" },
   ];
 
-  //RENDERS
-
   // RENDER MENU
   const RenderMenu = headerItems.map((item, i) => {
     return (
-      <li key={i}>
+      <li key={i} className="header__menu--item">
         <a href={item.path}>{item.item}</a>
       </li>
     );
   });
 
   return (
-    <header>
-      <img src={logo} alt="RuPaul's Drag Race Logo"></img>
-      <nav>
-        {" "}
-        <ul>{RenderMenu}</ul>
+    <header className="header">
+      <img
+        src={logo}
+        alt="RuPaul's Drag Race Logo"
+        className="header__img"
+      ></img>
+      <BurgerMenu />
+      <nav className="header__menu">
+        <ul className="header__menu--list">{RenderMenu}</ul>
       </nav>
     </header>
   );
