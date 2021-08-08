@@ -1,8 +1,12 @@
+//COMPONENTS
+
+import NoQueen from "./M - NoQueen";
+
 const QueensList = (props) => {
   //RENDER QUEENS
 
   if (props.queens.length === 0) {
-    return <p>Nada</p>;
+    return <NoQueen userSearch={props.userSearch} />;
   }
 
   const allQueens = props.queens.map((queen) => {
