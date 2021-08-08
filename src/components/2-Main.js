@@ -8,6 +8,7 @@ import SearchArea from "./M - SearchArea";
 const Main = () => {
   //STATES
   const [queens, setQueens] = useState(null);
+  const [filterQueen, setFilterQueen] = useState("");
 
   //API GET ALL QUEENS
   useEffect(() => {
@@ -18,9 +19,16 @@ const Main = () => {
   }, []);
 
   if (!queens) return null;
+
+  //METHODS
+
+  //HEARING SEARCH INPUT
+  const userSearch = (e) => {
+    setFilterQueen(e.target.value);
+  };
   return (
     <main className="main">
-      <SearchArea />
+      <SearchArea userSearch={userSearch} />
       <QueensList queens={queens} />
     </main>
   );

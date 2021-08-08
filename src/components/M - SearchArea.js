@@ -1,7 +1,17 @@
-const SearchArea = () => {
+const SearchArea = (props) => {
   return (
     <section className="searchArea">
-      <p>Search Area</p>
+      <form className="searchArea__form">
+        <label for="searchBar" className="searchArea__form--search">
+          <input
+            id="search"
+            type="search"
+            placeholder="Search a queen or season"
+            className="searchArea__form--search-input"
+            onChange={props.userSearch}
+          />
+        </label>
+      </form>
     </section>
   );
 };
