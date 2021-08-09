@@ -9,8 +9,7 @@ const FilterBySeason = (props) => {
         Filter by Winners
         <select id="winnerFilter" name="winnerFilter" onChange={handleWinner}>
           <option value="All">All</option>
-          <option value="Winner">Won</option>
-          <option value="Loser">Didn't win</option>
+          <option value="Winner">Winners</option>
         </select>
       </label>
     </>

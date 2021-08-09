@@ -8,6 +8,7 @@ import localStorage from "../service/LocalStorage";
 import QueensList from "./M- QueensList";
 import SearchArea from "./M - SearchArea";
 import FilterBySeason from "./M - FilterBySeason";
+import OrderByABC from "./M - OrderByABC";
 
 const Main = () => {
   const localQueens = localStorage.get("Queens", []);
@@ -17,6 +18,7 @@ const Main = () => {
   const [queens, setQueens] = useState(localQueens);
   const [filterQueen, setFilterQueen] = useState(localUserSearch);
   const [filterWinner, setFilterWinner] = useState("");
+  const [queensOrder, setQueensOrder] = useState("");
 
   //API GET ALL QUEENS
   useEffect(() => {
@@ -45,6 +47,8 @@ const Main = () => {
       setFilterQueen(filterData.searchValue);
     } else if (filterData.key === "winner") {
       setFilterWinner(filterData.winnerValue);
+    } else if (filterData.key === "order") {
+      setQueensOrder(filterData.orderValue);
     }
   };
 
@@ -54,6 +58,15 @@ const Main = () => {
     return setFilterQueen("");
   };
 
+  //ORDER QUEENS A-Z
+
+  /*const orderQueens = () => {
+    const orderQueen = ifqueens.sort((a, b) =>
+      a.name > b.name ? 1 : a.name < b.name ? -1 : 0
+    );
+    setQueens(orderQueen);
+  };
+*/
   // RENDERS
 
   //RENDERFILTERS
@@ -64,15 +77,22 @@ const Main = () => {
     .filter((queen) => {
       if (filterWinner === "Winner") {
         return queen.winner === true;
-      } else if (filterWinner === "Loser") {
-        return queen.winner === false;
-      } else return queen;
+      }
+      return queen;
+    })
+    .sort((a, b) => {
+      if (queensOrder === "A-Z") {
+        return a.name > b.name ? 1 : a.name < b.name ? -1 : 0;
+      } else {
+        return a.name < b.name ? 1 : a.name > b.name ? -1 : 0;
+      }
     });
 
   return (
     <main className="main">
       <SearchArea handleFilter={handleFilter} userSearch={filterQueen} />
       <FilterBySeason handleFilter={handleFilter} />
+      <OrderByABC handleFilter={handleFilter} />
       <QueensList
         queens={renderFilter}
         userSearch={filterQueen}
