@@ -7,6 +7,7 @@ import localStorage from "../service/LocalStorage";
 //COMPONENTS
 import QueensList from "./M- QueensList";
 import SearchArea from "./M - SearchArea";
+import FilterBySeason from "./M - FilterBySeason";
 
 const Main = () => {
   const localQueens = localStorage.get("Queens", []);
@@ -15,6 +16,7 @@ const Main = () => {
   //STATES
   const [queens, setQueens] = useState(localQueens);
   const [filterQueen, setFilterQueen] = useState(localUserSearch);
+  const [filterWinner, setFilterWinner] = useState("");
 
   //API GET ALL QUEENS
   useEffect(() => {
@@ -41,6 +43,8 @@ const Main = () => {
   const handleFilter = (filterData) => {
     if (filterData.key === "name") {
       setFilterQueen(filterData.searchValue);
+    } else if (filterData.key === "winner") {
+      setFilterWinner(filterData.winnerValue);
     }
   };
 
@@ -53,13 +57,22 @@ const Main = () => {
   // RENDERS
 
   //RENDERFILTERS
-  const renderFilter = queens.filter((queen) => {
-    return queen.name.toLowerCase().includes(filterQueen.toLowerCase());
-  });
+  const renderFilter = queens
+    .filter((queen) => {
+      return queen.name.toLowerCase().includes(filterQueen.toLowerCase());
+    })
+    .filter((queen) => {
+      if (filterWinner === "Winner") {
+        return queen.winner === true;
+      } else if (filterWinner === "Loser") {
+        return queen.winner === false;
+      } else return queen;
+    });
 
   return (
     <main className="main">
       <SearchArea handleFilter={handleFilter} userSearch={filterQueen} />
+      <FilterBySeason handleFilter={handleFilter} />
       <QueensList
         queens={renderFilter}
         userSearch={filterQueen}
