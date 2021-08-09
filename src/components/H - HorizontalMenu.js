@@ -12,7 +12,9 @@ const HorizontalMenu = () => {
   const RenderMenu = menuItems.map((item, i) => {
     return (
       <li key={i} className="header__menu--item">
-        <a href={item.path}>{item.item}</a>
+        <a href={item.path} className="header__menu--item-link">
+          {item.item}
+        </a>
       </li>
     );
   });
