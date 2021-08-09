@@ -4,11 +4,15 @@
   justify-content: space-between;
   background-color: $colorFucshia;
   &__menu {
-    display: none;
+    display: block;
     @include tablet() {
       display: block;
     }
     &--list {
+      height: 60px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
       @include tablet() {
         height: 60px;
         display: flex;

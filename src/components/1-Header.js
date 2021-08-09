@@ -1,5 +1,4 @@
 //COMPONENTS
-import BurgerMenu from "./H - BurgerMenu";
 import HorizontalMenu from "./H - HorizontalMenu";
 
 //IMAGES
@@ -13,7 +12,6 @@ const Header = () => {
         alt="RuPaul's Drag Race Logo"
         className="header__img"
       ></img>
-      <BurgerMenu />
       <HorizontalMenu />
     </header>
   );

@@ -25,11 +25,14 @@
           border-bottom: 1px solid $colorPink;
           border-radius: 0;
         }
+        &::placeholder {
+          color: $colorNoBlack;
+        }
         &::-webkit-search-cancel-button {
           -webkit-appearance: none;
           height: 15px;
           width: 15px;
-          background: $colorPink;
+          background: $colorBlue;
           clip-path: polygon(
             20% 0%,
             0% 20%,
