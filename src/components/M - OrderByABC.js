@@ -3,11 +3,20 @@ const OrderByABC = (props) => {
     props.handleFilter({ orderValue: ev.target.value, key: "order" });
   };
   return (
-    <label htmlFor="orderABC">
+    <label htmlFor="orderABC" className="filters__label">
       Order by
-      <select id="orderABC" name="orderABC" onChange={handleABCInput}>
-        <option value="A-Z">A-Z</option>
-        <option value="Z-A">Z-A</option>
+      <select
+        id="orderABC"
+        name="orderABC"
+        className="filters__select"
+        onChange={handleABCInput}
+      >
+        <option value="A-Z" className="filters__select--options">
+          A-Z
+        </option>
+        <option value="Z-A" className="filters__select--options">
+          Z-A
+        </option>
       </select>
     </label>
   );

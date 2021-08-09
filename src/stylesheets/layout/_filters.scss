@@ -1,0 +1,20 @@
+.filters {
+  padding: 0 15% 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  &__label {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  &__select {
+    border-radius: 25px;
+    padding: 5px;
+    margin-top: 10px;
+    background-color: $colorIce;
+    &--options {
+      border-radius: 25px;
+    }
+  }
+}
