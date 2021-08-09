@@ -9,6 +9,7 @@ import QueensList from "./M- QueensList";
 import SearchArea from "./M - SearchArea";
 import FilterBySeason from "./M - FilterBySeason";
 import OrderByABC from "./M - OrderByABC";
+import Filters from "./M - Filters";
 
 const Main = () => {
   const localQueens = localStorage.get("Queens", []);
@@ -18,7 +19,7 @@ const Main = () => {
   const [queens, setQueens] = useState(localQueens);
   const [filterQueen, setFilterQueen] = useState(localUserSearch);
   const [filterWinner, setFilterWinner] = useState("");
-  const [queensOrder, setQueensOrder] = useState("");
+  const [queensOrder, setQueensOrder] = useState("A-Z");
 
   //API GET ALL QUEENS
   useEffect(() => {
@@ -58,15 +59,6 @@ const Main = () => {
     return setFilterQueen("");
   };
 
-  //ORDER QUEENS A-Z
-
-  /*const orderQueens = () => {
-    const orderQueen = ifqueens.sort((a, b) =>
-      a.name > b.name ? 1 : a.name < b.name ? -1 : 0
-    );
-    setQueens(orderQueen);
-  };
-*/
   // RENDERS
 
   //RENDERFILTERS
@@ -91,8 +83,7 @@ const Main = () => {
   return (
     <main className="main">
       <SearchArea handleFilter={handleFilter} userSearch={filterQueen} />
-      <FilterBySeason handleFilter={handleFilter} />
-      <OrderByABC handleFilter={handleFilter} />
+      <Filters handleFilter={handleFilter} />
       <QueensList
         queens={renderFilter}
         userSearch={filterQueen}
