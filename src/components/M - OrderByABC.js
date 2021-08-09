@@ -1,6 +1,6 @@
 const OrderByABC = (props) => {
   const handleABCInput = (ev) => {
-    props.handleFilter({ orderValue: ev.target.value, key: "order" });
+    props.handleFilterQueen({ orderValue: ev.target.value, key: "order" });
   };
   return (
     <label htmlFor="orderABC" className="filters__label">

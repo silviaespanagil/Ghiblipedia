@@ -53,9 +53,9 @@ const Main = () => {
 
   //HANDLERS
 
-  //HANDLE  FILTER
+  //HANDLE  FILTER QUEENS
 
-  const handleFilter = (filterData) => {
+  const handleFilterQueen = (filterData) => {
     if (filterData.key === "name") {
       setFilterQueen(filterData.searchValue);
     } else if (filterData.key === "winner") {
@@ -96,8 +96,11 @@ const Main = () => {
     <main className="main">
       <Switch>
         <Route exact path="/">
-          <SearchArea handleFilter={handleFilter} userSearch={filterQueen} />
-          <Filters handleFilter={handleFilter} />
+          <SearchArea
+            handleFilterQueen={handleFilterQueen}
+            userSearch={filterQueen}
+          />
+          <Filters handleFilterQueen={handleFilterQueen} />
           <QueensList
             queens={renderFilter}
             userSearch={filterQueen}

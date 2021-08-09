@@ -6,8 +6,8 @@ import OrderByABC from "./M - OrderByABC";
 const Filters = (props) => {
   return (
     <form className="filters">
-      <FilterByWinner handleFilter={props.handleFilter} />
-      <OrderByABC handleFilter={props.handleFilter} />
+      <FilterByWinner handleFilterQueen={props.handleFilterQueen} />
+      <OrderByABC handleFilterQueen={props.handleFilterQueen} />
     </form>
   );
 };

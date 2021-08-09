@@ -1,6 +1,6 @@
 const FilterBySeason = (props) => {
   const handleWinner = (ev) => {
-    props.handleFilter({ winnerValue: ev.target.value, key: "winner" });
+    props.handleFilterQueen({ winnerValue: ev.target.value, key: "winner" });
   };
 
   return (
