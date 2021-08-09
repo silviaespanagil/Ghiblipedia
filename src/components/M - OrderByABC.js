@@ -11,12 +11,8 @@ const OrderByABC = (props) => {
         className="filters__select"
         onChange={handleABCInput}
       >
-        <option value="A-Z" className="filters__select--options">
-          A-Z
-        </option>
-        <option value="Z-A" className="filters__select--options">
-          Z-A
-        </option>
+        <option value="A-Z">A-Z</option>
+        <option value="Z-A">Z-A</option>
       </select>
     </label>
   );

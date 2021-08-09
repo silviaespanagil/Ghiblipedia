@@ -13,12 +13,8 @@ const FilterBySeason = (props) => {
           className="filters__select"
           onChange={handleWinner}
         >
-          <option value="All" className="filters__select--options">
-            All
-          </option>
-          <option value="Winner" className="filters__select--options">
-            Winners
-          </option>
+          <option value="All">All</option>
+          <option value="Winner">Winners</option>
         </select>
       </label>
     </>

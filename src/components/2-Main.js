@@ -14,9 +14,13 @@ const Main = () => {
   const localUserSearch = localStorage.get("User Search", "");
 
   //STATES
+  //MAIN ARRAY
   const [queens, setQueens] = useState(localQueens);
+
+  //FILTERS & ORDER
   const [filterQueen, setFilterQueen] = useState(localUserSearch);
   const [filterWinner, setFilterWinner] = useState("");
+  const [filterSeason, setSeasonOrder] = useState("");
   const [queensOrder, setQueensOrder] = useState("A-Z");
 
   //API GET ALL QUEENS
