@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 //COMPONENTS
 import HorizontalMenu from "./H - HorizontalMenu";
 
@@ -7,11 +9,9 @@ import logo from "../images/ruLogo.png";
 const Header = () => {
   return (
     <header className="header">
-      <img
-        src={logo}
-        alt="RuPaul's Drag Race Logo"
-        className="header__img"
-      ></img>
+      <Link to="/" className="header__image">
+        <img src={logo} alt="RuPaul's Drag Race Logo"></img>
+      </Link>
       <HorizontalMenu />
     </header>
   );

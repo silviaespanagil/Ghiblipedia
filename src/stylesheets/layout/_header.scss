@@ -3,6 +3,9 @@
   display: flex;
   justify-content: space-between;
   background-color: $colorFucshia;
+  &__image {
+    display: flex;
+  }
   &__menu {
     display: block;
     &--list {

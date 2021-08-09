@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Route, Switch } from "react-router-dom";
 
 //SERVICES
 import localStorage from "../service/LocalStorage";
@@ -14,24 +15,33 @@ const Main = () => {
   const localUserSearch = localStorage.get("User Search", "");
 
   //STATES
-  //MAIN ARRAY
+  //MAIN ARRAYS
   const [queens, setQueens] = useState(localQueens);
+  const [seasons, setSeasons] = useState();
 
   //FILTERS & ORDER
   const [filterQueen, setFilterQueen] = useState(localUserSearch);
   const [filterWinner, setFilterWinner] = useState("");
-  const [filterSeason, setSeasonOrder] = useState("");
   const [queensOrder, setQueensOrder] = useState("A-Z");
 
   //API GET ALL QUEENS
-  useEffect(() => {
-    const queensURL = "http://www.nokeynoshade.party/api/queens/all";
-    if (localQueens.length === 0) {
-      axios.get(queensURL).then((res) => {
-        setQueens(res.data);
+  useEffect(
+    () => {
+      const queensURL = "http://www.nokeynoshade.party/api/queens/all";
+      const seasonURL = "http://www.nokeynoshade.party/api/seasons";
+
+      if (localQueens.length === 0) {
+        axios.get(queensURL).then((res) => {
+          setQueens(res.data);
+        });
+      }
+      axios.get(seasonURL).then((res) => {
+        setSeasons(res.data);
       });
-    }
-  }, [queens]);
+    },
+    [queens],
+    [seasons]
+  );
 
   //LOCAL STORAGE SET
   useEffect(() => {
@@ -84,13 +94,17 @@ const Main = () => {
 
   return (
     <main className="main">
-      <SearchArea handleFilter={handleFilter} userSearch={filterQueen} />
-      <Filters handleFilter={handleFilter} />
-      <QueensList
-        queens={renderFilter}
-        userSearch={filterQueen}
-        resetSearch={handleResetSearch}
-      />
+      <Switch>
+        <Route exact path="/">
+          <SearchArea handleFilter={handleFilter} userSearch={filterQueen} />
+          <Filters handleFilter={handleFilter} />
+          <QueensList
+            queens={renderFilter}
+            userSearch={filterQueen}
+            resetSearch={handleResetSearch}
+          />
+        </Route>
+      </Switch>
     </main>
   );
 };
