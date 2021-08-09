@@ -6,14 +6,19 @@ const SearchArea = (props) => {
       key: "name",
     });
   };
+
+  const preventDefault = (ev) => {
+    ev.preventDefault();
+  };
+
   return (
     <section className="searchArea">
-      <form className="searchArea__form">
-        <label for="searchBar" className="searchArea__form--search">
+      <form className="searchArea__form" onSubmit={preventDefault}>
+        <label htmlFor="searchBar" className="searchArea__form--search">
           <input
             id="search"
             type="search"
-            placeholder="Search a queen or season"
+            placeholder="Search your favorite Queen"
             className="searchArea__form--search-input"
             value={props.userSearch}
             onChange={handleSearchBox}

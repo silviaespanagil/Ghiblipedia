@@ -7,8 +7,6 @@ import localStorage from "../service/LocalStorage";
 //COMPONENTS
 import QueensList from "./M- QueensList";
 import SearchArea from "./M - SearchArea";
-import FilterBySeason from "./M - FilterBySeason";
-import OrderByABC from "./M - OrderByABC";
 import Filters from "./M - Filters";
 
 const Main = () => {
