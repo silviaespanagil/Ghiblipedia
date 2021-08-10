@@ -1,5 +1,13 @@
 const FilterSeasons = (props) => {
-  const seasonName = props.seasons.map((season) => {
+  //HANDLER
+
+  //RENDERS
+  const handleSeason = (ev) => {
+    props.handleFilterSeason({ seasonValue: ev.target.value, key: "season" });
+  };
+
+  //RENDER CHECKBOXES
+  const renderCheckbox = props.seasons.map((season) => {
     return (
       <label
         htmlFor={`input${season.seasonNumber}`}
@@ -11,15 +19,17 @@ const FilterSeasons = (props) => {
           id={`input${season.seasonNumber}`}
           value={season.seasonNumber}
           className="searchArea__form--season-input"
+          onClick={handleSeason}
         />
       </label>
     );
   });
+
   return (
     <section className="searchArea">
       <form className="searchArea__form">
         <h2 className="searchArea__title">Seasons</h2>
-        <div className="searchArea__form--season">{seasonName}</div>
+        <div className="searchArea__form--season">{renderCheckbox}</div>
       </form>
     </section>
   );

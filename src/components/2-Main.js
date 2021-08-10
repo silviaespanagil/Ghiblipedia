@@ -21,6 +21,7 @@ const Main = () => {
 
   //FILTERS & ORDER
   const [filterQueen, setFilterQueen] = useState(localUserSearch);
+  const [filterSeason, setFilterSeason] = useState("");
   const [filterWinner, setFilterWinner] = useState("");
   const [queensOrder, setQueensOrder] = useState("A-Z");
 
@@ -69,6 +70,14 @@ const Main = () => {
     }
   };
 
+  //HANDLE  FILTER SEASON
+
+  const handleFilterSeason = (filterSeason) => {
+    if (filterSeason.key === "season") {
+      setFilterSeason(filterSeason.seasonValue);
+    }
+  };
+
   //RESET USER SEARCH
 
   const handleResetSearch = () => {
@@ -108,7 +117,7 @@ const Main = () => {
           />
         </Route>
         <Route path="/seasons">
-          <Seasons seasons={seasons} />
+          <Seasons seasons={seasons} handleFilterSeason={handleFilterSeason} />
         </Route>
       </Switch>
     </main>
