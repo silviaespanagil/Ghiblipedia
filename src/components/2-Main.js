@@ -38,6 +38,9 @@ const Main = () => {
       }
       if (localSeasons.length === 0) {
         axios.get(seasonURL).then((res) => {
+          res.data.sort((a, b) => {
+            return a.id > b.id ? 1 : -1;
+          });
           setSeasons(res.data);
         });
       }
