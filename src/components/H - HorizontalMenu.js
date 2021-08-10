@@ -6,7 +6,6 @@ const HorizontalMenu = () => {
   const menuItems = [
     { item: "Home", path: "/" },
     { item: "Queens", path: "/queens" },
-    { item: "Seasons", path: "/seasons" },
     { item: "Favs", path: "/favorites" },
   ];
 

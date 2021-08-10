@@ -7,57 +7,38 @@ import localStorage from "../service/LocalStorage";
 
 //COMPONENTS
 import Home from "./M-Home";
-import Seasons from "./M-Seasons";
 
 const Main = () => {
   const localQueens = localStorage.get("Queens", []);
-  const localSeasons = localStorage.get("Seasons", []);
   const localUserSearch = localStorage.get("User Search", "");
 
   //STATES
   //MAIN ARRAYS
   const [queens, setQueens] = useState(localQueens);
-  const [seasons, setSeasons] = useState(localSeasons);
 
   //FILTERS & ORDER
   const [filterQueen, setFilterQueen] = useState(localUserSearch);
-  const [filterSeason, setFilterSeason] = useState(localSeasons);
   const [filterWinner, setFilterWinner] = useState("");
   const [queensOrder, setQueensOrder] = useState("A-Z");
 
   //API GET ALL QUEENS
-  useEffect(
-    () => {
-      const queensURL = "http://www.nokeynoshade.party/api/queens/all";
-      const seasonURL = "http://www.nokeynoshade.party/api/seasons";
+  useEffect(() => {
+    const queensURL = "http://www.nokeynoshade.party/api/queens/all";
 
-      if (localQueens.length === 0) {
-        axios.get(queensURL).then((res) => {
-          setQueens(res.data);
-        });
-      }
-      if (localSeasons.length === 0) {
-        axios.get(seasonURL).then((res) => {
-          res.data.sort((a, b) => {
-            return a.id > b.id ? 1 : -1;
-          });
-          setSeasons(res.data);
-        });
-      }
-    },
-    [queens],
-    [seasons]
-  );
+    if (localQueens.length === 0) {
+      axios.get(queensURL).then((res) => {
+        setQueens(res.data);
+      });
+    }
+  }, [queens]);
 
   //LOCAL STORAGE SET
   useEffect(() => {
     localStorage.set("Queens", queens);
-    localStorage.set("Seasons", seasons);
     localStorage.set("User Search", filterQueen);
   });
 
   if (!queens) return null;
-  if (!seasons) return null;
 
   //HANDLERS
 
@@ -70,14 +51,6 @@ const Main = () => {
       setFilterWinner(filterData.winnerValue);
     } else if (filterData.key === "order") {
       setQueensOrder(filterData.orderValue);
-    }
-  };
-
-  //HANDLE  FILTER SEASON
-
-  const handleFilterSeason = (filterSeason) => {
-    if (filterSeason.key === "season") {
-      setFilterSeason(filterSeason.seasonValue);
     }
   };
 
@@ -118,9 +91,6 @@ const Main = () => {
             userSearch={filterQueen}
             resetSearch={handleResetSearch}
           />
-        </Route>
-        <Route path="/seasons">
-          <Seasons seasons={seasons} handleFilterSeason={handleFilterSeason} />
         </Route>
       </Switch>
     </main>

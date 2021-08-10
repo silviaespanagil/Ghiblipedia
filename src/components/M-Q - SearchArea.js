@@ -1,7 +1,7 @@
 const SearchArea = (props) => {
   //LISTEN SEARCH INPUT
   const handleSearchBox = (e) => {
-    props.handleFilter({
+    props.handleFilterQueen({
       searchValue: e.target.value.toLowerCase(),
       key: "name",
     });
