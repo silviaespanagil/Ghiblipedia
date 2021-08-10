@@ -5,7 +5,7 @@ import SeasonList from "./M-S - SeasonList";
 const Seasons = (props) => {
   return (
     <>
-      <FilterSeasons />
+      <FilterSeasons seasons={props.seasons} />
       <SeasonList seasons={props.seasons} />
     </>
   );
