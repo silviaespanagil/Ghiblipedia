@@ -11,12 +11,13 @@ import SeasonList from "./M - SeasonList";
 
 const Main = () => {
   const localQueens = localStorage.get("Queens", []);
+  const localSeasons = localStorage.get("Seasons", []);
   const localUserSearch = localStorage.get("User Search", "");
 
   //STATES
   //MAIN ARRAYS
   const [queens, setQueens] = useState(localQueens);
-  const [seasons, setSeasons] = useState();
+  const [seasons, setSeasons] = useState(localSeasons);
 
   //FILTERS & ORDER
   const [filterQueen, setFilterQueen] = useState(localUserSearch);
@@ -34,9 +35,11 @@ const Main = () => {
           setQueens(res.data);
         });
       }
-      axios.get(seasonURL).then((res) => {
-        setSeasons(res.data);
-      });
+      if (localSeasons.length === 0) {
+        axios.get(seasonURL).then((res) => {
+          setSeasons(res.data);
+        });
+      }
     },
     [queens],
     [seasons]
@@ -45,10 +48,12 @@ const Main = () => {
   //LOCAL STORAGE SET
   useEffect(() => {
     localStorage.set("Queens", queens);
+    localStorage.set("Seasons", seasons);
     localStorage.set("User Search", filterQueen);
   });
 
   if (!queens) return null;
+  if (!seasons) return null;
 
   //HANDLERS
 
