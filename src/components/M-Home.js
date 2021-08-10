@@ -13,8 +13,8 @@ const Home = (props) => {
       <Filters handleFilterQueen={props.handleFilterQueen} />
       <QueensList
         queens={props.queens}
-        userSearch={props.filterQueen}
-        resetSearch={props.handleResetSearch}
+        userSearch={props.userSearch}
+        resetSearch={props.resetSearch}
       />
       ;
     </>

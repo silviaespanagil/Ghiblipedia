@@ -20,11 +20,8 @@ const NoQueen = (props) => {
         className="noResults__back"
         onClick={props.resetSearch}
       >
-        <p>↩ Bring back my girls</p>
-      </Link>
-      {/*<a href="/" className="noResults__back" onClick={props.resetSearch}>
         Bring back my girls
-      </a>*/}
+      </Link>
     </section>
   );
 };
