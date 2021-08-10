@@ -3,7 +3,7 @@ const FilterSeasons = (props) => {
     return (
       <label
         htmlFor={`input${season.seasonNumber}`}
-        className="searchArea__form--season"
+        className="searchArea__form--season-label"
       >
         {season.seasonNumber}
         <input
@@ -17,8 +17,10 @@ const FilterSeasons = (props) => {
   });
   return (
     <section className="searchArea">
-      <h2 className="searchArea__title">RPDR Seasons</h2>
-      <form className="searchArea__form">{seasonName}</form>
+      <form className="searchArea__form">
+        <h2 className="searchArea__title">Seasons</h2>
+        <div className="searchArea__form--season">{seasonName}</div>
+      </form>
     </section>
   );
 };
