@@ -19,7 +19,9 @@ const QueenDetail = (props) => {
   if (props.queen.winner === true) {
     return (
       <section className="queenDetail">
-        <h2 className="queenDetail__name">{props.queen.name} </h2>
+        <h2 className="queenDetail__name">
+          {props.queen.name} {winnerIcon}{" "}
+        </h2>
         <article key={props.queen.id} className="queenDetail__article">
           <img
             src={props.queen.image_url}
