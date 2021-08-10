@@ -1,10 +1,12 @@
 const FilterSeasons = (props) => {
   //HANDLER
 
-  //RENDERS
+  //VALUE LISTENER
   const handleSeason = (ev) => {
     props.handleFilterSeason({ seasonValue: ev.target.value, key: "season" });
   };
+
+  //RENDERS
 
   //RENDER CHECKBOXES
   const renderCheckbox = props.seasons.map((season) => {

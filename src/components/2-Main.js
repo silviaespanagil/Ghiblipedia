@@ -21,7 +21,7 @@ const Main = () => {
 
   //FILTERS & ORDER
   const [filterQueen, setFilterQueen] = useState(localUserSearch);
-  const [filterSeason, setFilterSeason] = useState("");
+  const [filterSeason, setFilterSeason] = useState(localSeasons);
   const [filterWinner, setFilterWinner] = useState("");
   const [queensOrder, setQueensOrder] = useState("A-Z");
 
@@ -86,8 +86,8 @@ const Main = () => {
 
   // RENDERS
 
-  //RENDERFILTERS QUEENS
-  const renderFilter = queens
+  //RENDER FILTERED QUEENS
+  const renderFilterQueen = queens
     .filter((queen) => {
       return queen.name.toLowerCase().includes(filterQueen.toLowerCase());
     })
@@ -110,7 +110,7 @@ const Main = () => {
       <Switch>
         <Route exact path={["/", "/queens"]}>
           <Home
-            queens={renderFilter}
+            queens={renderFilterQueen}
             handleFilterQueen={handleFilterQueen}
             userSearch={filterQueen}
             resetSearch={handleResetSearch}
