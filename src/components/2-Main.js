@@ -7,6 +7,8 @@ import localStorage from "../service/LocalStorage";
 
 //COMPONENTS
 import Home from "./M-Home";
+import QueenDetail from "./M-Q - QueenDetail";
+import NoQueen from "./M-Q - NoQueen";
 import DontExist from "./M - DontExist";
 
 const Main = () => {
@@ -82,6 +84,16 @@ const Main = () => {
       }
     });
 
+  //RENDER QUEEN DETAIL
+
+  const renderQueenDetail = (routerProps) => {
+    const routerId = routerProps.match.params.id;
+    const queenFound = queens.find((queen) => queen.id === parseInt(routerId));
+
+    if (queenFound) {
+      return <QueenDetail queen={queenFound} />;
+    } else <NoQueen />;
+  };
   return (
     <main className="main">
       <Switch>
@@ -93,6 +105,7 @@ const Main = () => {
             resetSearch={handleResetSearch}
           />
         </Route>
+        <Route path="/queens/:id" render={renderQueenDetail} />
         <Route component={DontExist} />
       </Switch>
     </main>
