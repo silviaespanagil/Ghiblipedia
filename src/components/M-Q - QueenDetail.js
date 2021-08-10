@@ -12,21 +12,21 @@ const QueenDetail = (props) => {
     </section>
   );
   const winnerIcon = (
-    <span title="Season Winner" alt="Crown emoji">
+    <span title="Season Winner" alt="Crown emoji" className="queenDetail__icon">
       👑
     </span>
   );
   if (props.queen.winner === true) {
     return (
-      <section>
-        <article key={props.queen.id}>
-          {winnerIcon}
+      <section className="queenDetail">
+        <h2 className="queenDetail__name">{props.queen.name} </h2>
+        <article key={props.queen.id} className="queenDetail__article">
           <img
             src={props.queen.image_url}
             alt={`Portrait of ${props.queen.name}`}
+            className="queenDetail__img"
           />
-          <h2>{props.queen.name}</h2>
-          <q>{props.queen.quote}</q>
+          <q className="queenDetail__quote">{props.queen.quote}</q>
         </article>
       </section>
     );
