@@ -7,7 +7,7 @@ import localStorage from "../service/LocalStorage";
 
 //COMPONENTS
 import Home from "./M-Home";
-import SeasonList from "./M - SeasonList";
+import SeasonList from "./M-S - SeasonList";
 
 const Main = () => {
   const localQueens = localStorage.get("Queens", []);
@@ -77,7 +77,7 @@ const Main = () => {
 
   // RENDERS
 
-  //RENDERFILTERS
+  //RENDERFILTERS QUEENS
   const renderFilter = queens
     .filter((queen) => {
       return queen.name.toLowerCase().includes(filterQueen.toLowerCase());

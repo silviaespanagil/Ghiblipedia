@@ -1,7 +1,7 @@
 //COMPONENT
 
-import FilterByWinner from "./M - FilterByWinner";
-import OrderByABC from "./M - OrderByABC";
+import FilterByWinner from "./M-Q - FilterByWinner";
+import OrderByABC from "./M-Q - OrderByABC";
 
 const Filters = (props) => {
   return (

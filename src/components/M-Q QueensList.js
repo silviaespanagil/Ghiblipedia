@@ -1,6 +1,6 @@
 //COMPONENTS
 
-import NoQueen from "./M - NoQueen";
+import NoQueen from "./M-Q - NoQueen";
 
 const QueensList = (props) => {
   //RENDER QUEENS

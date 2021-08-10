@@ -1,7 +1,7 @@
 //COMPONENTS
-import SearchArea from "./M - SearchArea";
-import Filters from "./M - Filters";
-import QueensList from "./M- QueensList";
+import SearchArea from "./M-Q - SearchArea";
+import Filters from "./M-Q - Filters";
+import QueensList from "./M-Q QueensList";
 
 const Home = (props) => {
   return (
