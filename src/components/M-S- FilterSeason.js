@@ -9,7 +9,12 @@ const FilterSeasons = (props) => {
   //RENDERS
 
   //RENDER CHECKBOXES
-  const renderCheckbox = props.seasons.map((season) => {
+
+  const sortedSeasons = props.seasons.sort((a, b) => {
+    return a.id > b.id ? 1 : -1;
+  });
+
+  const renderCheckbox = sortedSeasons.map((season) => {
     return (
       <label
         htmlFor={`input${season.seasonNumber}`}
@@ -21,7 +26,7 @@ const FilterSeasons = (props) => {
           id={`input${season.seasonNumber}`}
           value={season.seasonNumber}
           className="searchArea__form--season-input"
-          onClick={handleSeason}
+          onChange={handleSeason}
         />
       </label>
     );
