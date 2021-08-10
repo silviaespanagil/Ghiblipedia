@@ -2,11 +2,11 @@
 import FilterSeasons from "./M-S- FilterSeason";
 import SeasonList from "./M-S - SeasonList";
 
-const Seasons = () => {
+const Seasons = (props) => {
   return (
     <>
       <FilterSeasons />
-      <SeasonList />
+      <SeasonList seasons={props.seasons} />
     </>
   );
 };

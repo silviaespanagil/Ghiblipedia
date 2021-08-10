@@ -7,7 +7,7 @@ import localStorage from "../service/LocalStorage";
 
 //COMPONENTS
 import Home from "./M-Home";
-import SeasonList from "./M-S - SeasonList";
+import Seasons from "./M-Seasons";
 
 const Main = () => {
   const localQueens = localStorage.get("Queens", []);
@@ -108,7 +108,7 @@ const Main = () => {
           />
         </Route>
         <Route path="/seasons">
-          <SeasonList seasons={seasons} />
+          <Seasons seasons={seasons} />
         </Route>
       </Switch>
     </main>

@@ -1,8 +1,8 @@
 const SeasonList = (props) => {
-  const allSeasons = props.seasons.map((season) => {
+  const allSeasons = props.seasons.map((season, index) => {
     return (
       <>
-        <article key={season.id} className="apiList__card">
+        <article key={index} className="apiList__card">
           <img
             src={season.image_url}
             alt={`Group of season ${season.seasonNumber} queens`}
