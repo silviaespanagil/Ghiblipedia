@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const HorizontalMenu = () => {
   //MENU ITEMS
 
@@ -12,9 +14,9 @@ const HorizontalMenu = () => {
   const RenderMenu = menuItems.map((item, i) => {
     return (
       <li key={i} className="header__menu--item">
-        <a href={item.path} className="header__menu--item-link">
+        <Link to={item.path} className="header__menu--item-link">
           {item.item}
-        </a>
+        </Link>
       </li>
     );
   });

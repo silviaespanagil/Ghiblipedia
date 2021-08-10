@@ -6,9 +6,8 @@ import { Route, Switch } from "react-router-dom";
 import localStorage from "../service/LocalStorage";
 
 //COMPONENTS
-import QueensList from "./M- QueensList";
-import SearchArea from "./M - SearchArea";
-import Filters from "./M - Filters";
+import Home from "./M-Home";
+import SeasonList from "./M - SeasonList";
 
 const Main = () => {
   const localQueens = localStorage.get("Queens", []);
@@ -95,17 +94,16 @@ const Main = () => {
   return (
     <main className="main">
       <Switch>
-        <Route exact path="/">
-          <SearchArea
-            handleFilterQueen={handleFilterQueen}
-            userSearch={filterQueen}
-          />
-          <Filters handleFilterQueen={handleFilterQueen} />
-          <QueensList
+        <Route exact path={["/", "/queens"]}>
+          <Home
             queens={renderFilter}
+            handleFilterQueen={handleFilterQueen}
             userSearch={filterQueen}
             resetSearch={handleResetSearch}
           />
+        </Route>
+        <Route path="/seasons">
+          <SeasonList />
         </Route>
       </Switch>
     </main>
