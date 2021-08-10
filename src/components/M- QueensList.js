@@ -16,7 +16,7 @@ const QueensList = (props) => {
       <article key={queen.id} className="queensList__card">
         <img
           src={queen.image_url}
-          alt={`"Portrait of "${queen.name}`}
+          alt={`Portrait of ${queen.name}`}
           className="queensList__card--img"
         />
         <h2 className="queensList__card--name">{queen.name}</h2>

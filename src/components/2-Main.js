@@ -103,7 +103,7 @@ const Main = () => {
           />
         </Route>
         <Route path="/seasons">
-          <SeasonList />
+          <SeasonList seasons={seasons} />
         </Route>
       </Switch>
     </main>
