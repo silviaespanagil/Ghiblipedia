@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 //IMAGES
 import NoResults from "../images/HeidiNoResults.gif";
 
@@ -13,9 +15,16 @@ const NoQueen = (props) => {
         alt="Gif of Heidi n Closet looking around confused"
         className="noResults__img"
       />
-      <a href="/" className="noResults__back" onClick={props.resetSearch}>
+      <Link
+        to="/queens"
+        className="noResults__back"
+        onClick={props.resetSearch}
+      >
+        <p>↩ Bring back my girls</p>
+      </Link>
+      {/*<a href="/" className="noResults__back" onClick={props.resetSearch}>
         Bring back my girls
-      </a>
+      </a>*/}
     </section>
   );
 };
