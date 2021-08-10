@@ -7,6 +7,7 @@ import localStorage from "../service/LocalStorage";
 
 //COMPONENTS
 import Home from "./M-Home";
+import DontExist from "./M - DontExist";
 
 const Main = () => {
   const localQueens = localStorage.get("Queens", []);
@@ -92,6 +93,7 @@ const Main = () => {
             resetSearch={handleResetSearch}
           />
         </Route>
+        <Route component={DontExist} />
       </Switch>
     </main>
   );
