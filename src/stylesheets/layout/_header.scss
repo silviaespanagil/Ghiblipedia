@@ -5,9 +5,11 @@
   background-color: $colorFucshia;
   &__image {
     display: flex;
+    padding-left: 2%;
   }
   &__menu {
     display: block;
+    padding-right: 2%;
     &--list {
       height: 60px;
       display: flex;
@@ -16,9 +18,17 @@
       font-weight: 500;
     }
     &--item {
-      padding-right: 20px;
       text-transform: uppercase;
       &-link {
+        font-size: 0.7rem;
+        padding-right: 10px;
+        @media (min-width: 330px) {
+          font-size: 0.9rem;
+        }
+        @include preTablet() {
+          font: 1rem;
+          padding-right: 20px;
+        }
         &:hover {
           color: $colorBlue;
         }
