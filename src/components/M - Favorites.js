@@ -3,7 +3,7 @@ import NoFavorites from "./M-F - NoFavorites";
 
 const Favorites = (props) => {
   if (props.favorites.length === 0) {
-    return <NoFavorites />;
+    return <NoFavorites isDark={props.isDark} />;
   }
 
   const favoriteQueens = props.favorites.map((favorite, index) => {

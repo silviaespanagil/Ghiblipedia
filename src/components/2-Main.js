@@ -166,6 +166,7 @@ const Main = (props) => {
             favorites={favorites}
             queens={queens}
             favQueen={favQueen}
+            isDark={props.isDark}
           />
         </Route>
         <Route component={DontExist} />

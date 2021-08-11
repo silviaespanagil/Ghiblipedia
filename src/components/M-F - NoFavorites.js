@@ -1,10 +1,14 @@
 import { Link } from "react-router-dom";
 
-const NoFavorites = () => {
+const NoFavorites = (props) => {
   return (
-    <section className="noFav">
-      <h3 className="noFav__text">The shade of it all!</h3>
-      <p>You have no favorite queens yet...go back and add some</p>
+    <section className={props.isDark ? "noFav" : "noFavD"}>
+      <h3 className={props.isDark ? "noFav__text" : "noFavD__text"}>
+        The shade of it all!
+      </h3>
+      <p className={props.isDark ? "noFav__paragraph" : "noFavD__paragraph"}>
+        You have no favorite queens yet...go back and add some
+      </p>
       <Link to="/queens" className="dontExist__back">
         Go back
       </Link>
