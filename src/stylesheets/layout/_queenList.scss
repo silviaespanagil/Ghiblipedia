@@ -16,6 +16,10 @@
     border-radius: 20px;
     background-color: rgba(229, 0, 124, 0.2);
     margin-bottom: 25px;
+    &:hover {
+      transform: scale(1.02);
+    }
+
     @include preTablet() {
       width: 46%;
       margin: 2%;
@@ -27,23 +31,25 @@
     &--fav {
       align-self: flex-end;
       position: absolute;
-      top: 25px;
-      padding: 0 20px;
+      top: 5px;
+      padding: 0 10px;
       background-color: rgba(255, 255, 255, 0);
       &:hover {
         transform: scale(1.2);
       }
       &-icon {
         color: $colorFucshia;
+        padding: 4px;
       }
     }
     &--content {
       display: flex;
       flex-direction: column;
-      height: 250px;
+      justify-content: flex-end;
+      height: 300px;
 
       &-img {
-        height: 85%;
+        height: 80%;
         width: 100%;
         object-fit: cover;
         object-position: top;
@@ -51,7 +57,7 @@
       }
       &-name {
         text-align: center;
-        padding: 10px;
+        padding: 5px;
         overflow: hidden;
       }
     }
