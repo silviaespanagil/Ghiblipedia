@@ -1,3 +1,7 @@
+//COMPONENTS
+
+import Rupedia from "./M- Rupedia";
+
 const SearchArea = (props) => {
   //LISTEN SEARCH INPUT
   const handleSearchBox = (e) => {
@@ -13,6 +17,7 @@ const SearchArea = (props) => {
 
   return (
     <section className="searchArea">
+      <Rupedia />
       <form className="searchArea__form" onSubmit={preventDefault}>
         <label htmlFor="searchBar" className="searchArea__form--search">
           <input

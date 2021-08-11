@@ -1,0 +1,11 @@
+.rupedia {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 15px;
+  &__title {
+    text-transform: uppercase;
+    font-size: 2rem;
+    padding-bottom: 10px;
+  }
+}
