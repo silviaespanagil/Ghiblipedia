@@ -13,19 +13,35 @@ function App() {
 
   // STATES
   const [mode, setMode] = useState(false);
+  const [body, setBody] = useState(true);
 
   //HANDLERS
-
   const handleDarkMode = () => {
     setMode(!mode);
+    setBody(!body);
+    setBackground();
   };
+
+  function setBackground() {
+    let mybody = document.getElementsByTagName("body")[0];
+    if (body === true) {
+      mybody.style.backgroundColor = "#090126";
+    } else {
+      mybody.style.backgroundColor = "#efecce";
+    }
+  }
+
   const isDark = mode === false;
 
   return (
     <>
       <div ref={refScrollUp}> </div>
       <Header handleDarkMode={handleDarkMode} isDark={isDark} />
-      <Main refScrollUp={refScrollUp} />
+      <Main
+        refScrollUp={refScrollUp}
+        handleDarkMode={handleDarkMode}
+        isDark={isDark}
+      />
     </>
   );
 }

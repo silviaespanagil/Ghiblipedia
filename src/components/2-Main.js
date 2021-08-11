@@ -157,6 +157,7 @@ const Main = (props) => {
             favQueen={favQueen}
             showGoTop={showGoTop}
             scrollUp={handleScrollUp}
+            isDark={props.isDark}
           />
         </Route>
         <Route path="/queens/:id" render={renderQueenDetail} />
