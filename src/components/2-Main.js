@@ -130,7 +130,11 @@ const Main = () => {
         </Route>
         <Route path="/queens/:id" render={renderQueenDetail} />
         <Route path="/favorites">
-          <Favorites favorites={favorites} />
+          <Favorites
+            favorites={favorites}
+            queens={queens}
+            favQueen={favQueen}
+          />
         </Route>
         <Route component={DontExist} />
       </Switch>

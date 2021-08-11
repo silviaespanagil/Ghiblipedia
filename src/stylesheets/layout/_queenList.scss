@@ -1,3 +1,43 @@
+.queensWrapper {
+  @include preTablet() {
+    padding: 0 10%;
+    display: flex;
+  }
+}
+.homeFavorites {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: auto;
+  @include tablet() {
+    margin-top: 50px;
+    padding: 0 25px;
+    border-right: 2px dotted $colorPink;
+  }
+  &__title {
+    padding-bottom: 30px;
+  }
+  &__list {
+    padding: 10px;
+
+    &--card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 2px solid $colorPink;
+      padding: 10px;
+      margin-bottom: 15px;
+      box-shadow: 2px 2px 10px $colorNoBlack;
+      &-title {
+        text-transform: uppercase;
+      }
+      &-img {
+        width: 100px;
+      }
+    }
+  }
+}
+
 .apiList {
   display: flex;
   flex-direction: column;
