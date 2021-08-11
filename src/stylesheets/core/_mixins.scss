@@ -1,3 +1,9 @@
+@mixin preTablet() {
+  @media (min-width: 500px) {
+    @content;
+  }
+}
+
 @mixin tablet() {
   @media (min-width: 768px) {
     @content;
