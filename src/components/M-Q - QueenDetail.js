@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const QueenDetail = (props) => {
   const detailCard = (
     <section className="queenDetail">
@@ -10,6 +12,9 @@ const QueenDetail = (props) => {
         />
 
         <q className="queenDetail__quote">{props.queen.quote}</q>
+        <Link to="/queens" className="dontExist__back">
+          Go back
+        </Link>
       </article>
     </section>
   );
@@ -32,6 +37,9 @@ const QueenDetail = (props) => {
           />
           <q className="queenDetail__quote">{props.queen.quote}</q>
         </article>
+        <Link to="/queens" className="dontExist__back">
+          Go back
+        </Link>
       </section>
     );
   } else {
