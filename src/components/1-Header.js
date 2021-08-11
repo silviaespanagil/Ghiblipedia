@@ -7,22 +7,20 @@ import HorizontalMenu from "./H - HorizontalMenu";
 //IMAGES
 import logo from "../images/ruLogo.png";
 
-const Header = () => {
-  const [mode, setMode] = useState(false);
-
-  const handleDarkMode = () => {
-    setMode(!mode);
-  };
-  console.log(mode);
-  const isDark = mode === false;
-
+const Header = (props) => {
   return (
-    <header className={isDark ? "header" : "headerD"}>
-      <Link to="/" className={isDark ? "header__image" : "headerD__image"}>
+    <header className={props.isDark ? "header" : "headerD"}>
+      <Link
+        to="/"
+        className={props.isDark ? "header__image" : "headerD__image"}
+      >
         <img src={logo} alt="RuPaul's Drag Race Logo"></img>
       </Link>
-      <HorizontalMenu />
-      <p onClick={handleDarkMode}>Darkmode</p>
+      <HorizontalMenu
+        handleDarkMode={props.handleDarkMode}
+        isDark={props.isDark}
+      />
+      <p onClick={props.handleDarkMode}>Darkmode</p>
     </header>
   );
 };

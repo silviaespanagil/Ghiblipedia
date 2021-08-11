@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-between;
   background-color: $colorDarkPurple;
-  color: $colorNoWhite;
+
   &__image {
     display: flex;
     padding-left: 2%;
@@ -23,6 +23,7 @@
       &-link {
         font-size: 0.7rem;
         padding-right: 10px;
+        color: $colorNoWhite;
         @media (min-width: 330px) {
           font-size: 0.9rem;
         }

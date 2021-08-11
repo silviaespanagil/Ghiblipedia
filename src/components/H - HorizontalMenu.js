@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const HorizontalMenu = () => {
+const HorizontalMenu = (props) => {
   //MENU ITEMS
 
   const menuItems = [
@@ -12,16 +12,30 @@ const HorizontalMenu = () => {
   // RENDER MENU
   const RenderMenu = menuItems.map((item, i) => {
     return (
-      <li key={i} className="header__menu--item">
-        <Link to={item.path} className="header__menu--item-link">
+      <li
+        key={i}
+        className={props.isDark ? "header__menu--item" : "headerD__menu--item"}
+      >
+        <Link
+          to={item.path}
+          className={
+            props.isDark
+              ? "header__menu--item-link"
+              : "headerD__menu--item-link"
+          }
+        >
           {item.item}
         </Link>
       </li>
     );
   });
   return (
-    <nav className="header__menu">
-      <ul className="header__menu--list">{RenderMenu}</ul>
+    <nav className={props.isDark ? "header__menu" : "headerD__menu"}>
+      <ul
+        className={props.isDark ? "header__menu--list" : "headerD__menu--list"}
+      >
+        {RenderMenu}
+      </ul>
     </nav>
   );
 };

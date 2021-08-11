@@ -11,18 +11,20 @@ function App() {
   //REF FOR TOP BUTTON SCROLL
   const refScrollUp = useRef();
 
+  // STATES
   const [mode, setMode] = useState(false);
+
+  //HANDLERS
 
   const handleDarkMode = () => {
     setMode(!mode);
   };
-  console.log(mode);
   const isDark = mode === false;
 
   return (
     <>
       <div ref={refScrollUp}> </div>
-      <Header />
+      <Header handleDarkMode={handleDarkMode} isDark={isDark} />
       <Main refScrollUp={refScrollUp} />
     </>
   );
