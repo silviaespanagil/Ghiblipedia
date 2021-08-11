@@ -12,7 +12,7 @@ import Favorites from "./M - Favorites";
 import NoQueen from "./M-Q - NoQueen";
 import DontExist from "./M - DontExist";
 
-const Main = () => {
+const Main = (props) => {
   //LOCAL STORAGE GET
   const localQueens = localStorage.get("Queens", []);
   const localUserSearch = localStorage.get("User Search", "");
@@ -27,6 +27,34 @@ const Main = () => {
   const [filterQueen, setFilterQueen] = useState(localUserSearch);
   const [filterWinner, setFilterWinner] = useState("");
   const [queensOrder, setQueensOrder] = useState("A-Z");
+
+  //GO TOP
+  let [showGoTop, setshowGoTop] = useState("goTopHidden");
+  const [scrollPosition, setSrollPosition] = useState(0);
+
+  //GO TOP FUNCTIONALITY
+
+  //VISIBILITY BUTTON HANDLER
+  const handleVisibleButton = () => {
+    const position = window.pageYOffset;
+    setSrollPosition(position);
+
+    if (scrollPosition > 50) {
+      return setshowGoTop("goTop");
+    } else if (scrollPosition < 50) {
+      return setshowGoTop("goTopHidden");
+    }
+  };
+
+  //SCROLL UP HANDLER
+  const handleScrollUp = () => {
+    props.refScrollUp.current.scrollIntoView({ behavior: "smooth" });
+  };
+
+  //SCROLL LISTENER
+  useEffect(() => {
+    window.addEventListener("scroll", handleVisibleButton);
+  });
 
   //API GET ALL QUEENS
   useEffect(() => {
@@ -65,7 +93,7 @@ const Main = () => {
     setFavorites(newFavorites);
   };
 
-  //HANDLERS
+  //HANDLERS AND RENDERS
 
   //HANDLE  FILTER QUEENS
 
@@ -84,8 +112,6 @@ const Main = () => {
   const handleResetSearch = () => {
     return setFilterQueen("");
   };
-
-  // RENDERS
 
   //RENDER FILTERED QUEENS
   const renderFilterQueen = queens
@@ -116,6 +142,7 @@ const Main = () => {
       return <QueenDetail queen={queenFound} />;
     } else <NoQueen />;
   };
+
   return (
     <main className="main">
       <Switch>
@@ -127,6 +154,8 @@ const Main = () => {
             resetSearch={handleResetSearch}
             favorites={favorites}
             favQueen={favQueen}
+            showGoTop={showGoTop}
+            scrollUp={handleScrollUp}
           />
         </Route>
         <Route path="/queens/:id" render={renderQueenDetail} />
