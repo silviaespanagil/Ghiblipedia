@@ -13,13 +13,15 @@ import NoQueen from "./M-Q - NoQueen";
 import DontExist from "./M - DontExist";
 
 const Main = () => {
+  //LOCAL STORAGE GET
   const localQueens = localStorage.get("Queens", []);
   const localUserSearch = localStorage.get("User Search", "");
+  const localFavorites = localStorage.get("Favorites", []);
 
   //STATES
   //MAIN ARRAYS
   const [queens, setQueens] = useState(localQueens);
-  const [favorites, setFavorites] = useState([]);
+  const [favorites, setFavorites] = useState(localFavorites);
 
   //FILTERS & ORDER
   const [filterQueen, setFilterQueen] = useState(localUserSearch);
@@ -41,6 +43,7 @@ const Main = () => {
   useEffect(() => {
     localStorage.set("Queens", queens);
     localStorage.set("User Search", filterQueen);
+    localStorage.set("Favorites", favorites);
   });
 
   if (!queens) return null;
@@ -48,10 +51,8 @@ const Main = () => {
   //FAVORITES SETTING
   const favQueen = (clickedQueen) => {
     const favoritedQueen = favorites.find((queen) => {
-      console.log(queen.id, clickedQueen);
       return queen.id === clickedQueen;
     });
-    console.log(favoritedQueen);
     if (favoritedQueen === undefined) {
       const queenFav = queens.find((queen) => {
         return queen.id === clickedQueen;

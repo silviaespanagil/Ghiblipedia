@@ -18,7 +18,7 @@ const QueensList = (props) => {
     return (
       <li key={queen.id} className="apiList__card">
         <button
-          apiList__cardid={index}
+          id={index}
           onClick={() => props.favQueen(queen.id)}
           className="apiList__card--fav"
         >

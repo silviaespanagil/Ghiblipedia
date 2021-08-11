@@ -11,7 +11,7 @@ const Favorites = (props) => {
     return (
       <li key={favorite.id} className="apiList__card">
         <button
-          apiList__cardid={index}
+          id={index}
           onClick={() => props.favQueen(favorite.id)}
           className="apiList__card--fav"
         >

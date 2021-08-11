@@ -25,7 +25,6 @@ const SearchArea = (props) => {
             type="search"
             placeholder="Search a queen"
             className="searchArea__form--search-input"
-            value={props.userSearch}
             onChange={handleSearchBox}
           />
         </label>
