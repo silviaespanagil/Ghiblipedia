@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 //COMPONENTS
 import Header from "./1-Header";
@@ -8,8 +8,16 @@ import Main from "./2-Main";
 import "../stylesheets/App.scss";
 
 function App() {
-  //Ref for the ScrollUp action
+  //REF FOR TOP BUTTON SCROLL
   const refScrollUp = useRef();
+
+  const [mode, setMode] = useState(false);
+
+  const handleDarkMode = () => {
+    setMode(!mode);
+  };
+  console.log(mode);
+  const isDark = mode === false;
 
   return (
     <>
