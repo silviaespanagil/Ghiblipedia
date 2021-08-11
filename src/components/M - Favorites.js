@@ -33,7 +33,12 @@ const Favorites = (props) => {
     );
   });
 
-  return <section className="apiList">{favoriteQueens}</section>;
+  return (
+    <section className="favorites">
+      <h2 className="favorites__title">My top queens</h2>
+      <ul className="favorites__list">{favoriteQueens}</ul>
+    </section>
+  );
 };
 
 export default Favorites;
