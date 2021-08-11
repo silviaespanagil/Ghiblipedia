@@ -1,6 +1,9 @@
+//COMPONENTS
+import NoFavorites from "./M-F - NoFavorites";
+
 const Favorites = (props) => {
   if (props.favorites.length === 0) {
-    return <p>You have no favorite queens...yet</p>;
+    return <NoFavorites />;
   }
 
   const favoriteQueens = props.favorites.map((favorite, index) => {
