@@ -8,6 +8,7 @@ import localStorage from "../service/LocalStorage";
 //COMPONENTS
 import Home from "./M-Home";
 import QueenDetail from "./M-Q - QueenDetail";
+import Favorites from "./M - Favorites";
 import NoQueen from "./M-Q - NoQueen";
 import DontExist from "./M - DontExist";
 
@@ -18,6 +19,7 @@ const Main = () => {
   //STATES
   //MAIN ARRAYS
   const [queens, setQueens] = useState(localQueens);
+  const [favorites, setFavorites] = useState([]);
 
   //FILTERS & ORDER
   const [filterQueen, setFilterQueen] = useState(localUserSearch);
@@ -43,6 +45,23 @@ const Main = () => {
 
   if (!queens) return null;
 
+  //FAVORITES SETTING
+
+  const favQueen = (clickedQueen) => {
+    const favoritedQueen = queens.find((queen) => queen.id === clickedQueen);
+    setFavorites(...favorites, favoritedQueen);
+
+    if (!favorites.includes(favoritedQueen)) {
+      setFavorites(...favorites, favoritedQueen);
+    }
+
+    const deleteFavorites = favorites.filter(
+      (queen) => queen.id !== clickedQueen
+    );
+    setFavorites(deleteFavorites);
+  };
+
+  console.log(favorites);
   //HANDLERS
 
   //HANDLE  FILTER QUEENS
@@ -84,7 +103,7 @@ const Main = () => {
       }
     });
 
-  //RENDER QUEEN DETAIL
+  //RENDER QUEEN DETAIL DINAMIC ROUTE
 
   const renderQueenDetail = (routerProps) => {
     const routerId = routerProps.match.params.id;
@@ -103,9 +122,14 @@ const Main = () => {
             handleFilterQueen={handleFilterQueen}
             userSearch={filterQueen}
             resetSearch={handleResetSearch}
+            favorites={favorites}
+            favQueen={favQueen}
           />
         </Route>
         <Route path="/queens/:id" render={renderQueenDetail} />
+        <Route path="/favorites">
+          <Favorites favorites={favorites} />
+        </Route>
         <Route component={DontExist} />
       </Switch>
     </main>

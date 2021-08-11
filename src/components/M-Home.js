@@ -15,6 +15,8 @@ const Home = (props) => {
         queens={props.queens}
         userSearch={props.userSearch}
         resetSearch={props.resetSearch}
+        favorites={props.favorites}
+        favQueen={props.favQueen}
       />
       ;
     </>
