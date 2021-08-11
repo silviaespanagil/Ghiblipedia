@@ -46,22 +46,24 @@ const Main = () => {
   if (!queens) return null;
 
   //FAVORITES SETTING
-
   const favQueen = (clickedQueen) => {
-    const favoritedQueen = queens.find((queen) => queen.id === clickedQueen);
-    setFavorites(...favorites, favoritedQueen);
+    const favoritedQueen = favorites.find((queen) => {
+      console.log(queen.id, clickedQueen);
+      return queen.id === clickedQueen;
+    });
+    console.log(favoritedQueen);
+    if (favoritedQueen === undefined) {
+      const queenFav = queens.find((queen) => {
+        return queen.id === clickedQueen;
+      });
+      setFavorites([...favorites, queenFav]);
 
-    if (!favorites.includes(favoritedQueen)) {
-      setFavorites(...favorites, favoritedQueen);
+      return;
     }
-
-    const deleteFavorites = favorites.filter(
-      (queen) => queen.id !== clickedQueen
-    );
-    setFavorites(deleteFavorites);
+    const newFavorites = favorites.filter((queen) => queen.id !== clickedQueen);
+    setFavorites(newFavorites);
   };
 
-  console.log(favorites);
   //HANDLERS
 
   //HANDLE  FILTER QUEENS

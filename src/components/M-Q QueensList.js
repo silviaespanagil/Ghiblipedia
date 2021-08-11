@@ -1,18 +1,10 @@
 import { Link } from "react-router-dom";
 
 //COMPONENTS
-
 import NoQueen from "./M-Q - NoQueen";
 
 const QueensList = (props) => {
-  //RENDER QUEENS
-
-  if (props.queens.length === 0) {
-    return (
-      <NoQueen userSearch={props.userSearch} resetSearch={props.resetSearch} />
-    );
-  }
-
+  //FAVORITE QUEENS
   const favoriteQueens = props.favorites.map((favorite) => {
     return (
       <li key={favorite.id}>
@@ -21,6 +13,13 @@ const QueensList = (props) => {
       </li>
     );
   });
+
+  //RENDER FOR WHEN THE SEARCH SHOWS NO RESULTS
+  if (props.queens.length === 0) {
+    return (
+      <NoQueen userSearch={props.userSearch} resetSearch={props.resetSearch} />
+    );
+  }
 
   const allQueens = props.queens.map((queen, index) => {
     const isFavorite = props.favorites.find(
