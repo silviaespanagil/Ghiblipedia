@@ -12,7 +12,10 @@ const Home = (props) => {
         userSearch={props.filterQueen}
         handleFilterQueen={props.handleFilterQueen}
       />
-      <Filters handleFilterQueen={props.handleFilterQueen} />
+      <Filters
+        handleFilterQueen={props.handleFilterQueen}
+        isDark={props.isDark}
+      />
       <QueensList
         queens={props.queens}
         userSearch={props.userSearch}

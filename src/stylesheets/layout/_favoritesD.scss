@@ -1,3 +1,29 @@
+.favorites {
+  height: 150px;
+  background-image: url("../../images/background.png");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  &__title {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 2rem;
+    line-height: 150px;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10%;
+
+    @include preTablet() {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+}
+
 .noFavD {
   background-image: url("../../images/shadeGif.gif");
   background-repeat: no-repeat;

@@ -1,4 +1,4 @@
-.filters {
+.filtersD {
   padding: 0 15% 30px;
   display: flex;
   flex-wrap: wrap;
@@ -7,7 +7,7 @@
     padding: 10px;
     display: flex;
     flex-direction: column;
-    color: $colorNoBlack;
+    color: $colorNoWhite;
   }
   &__select {
     border-radius: 25px;

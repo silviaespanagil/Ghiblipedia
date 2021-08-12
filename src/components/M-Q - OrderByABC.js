@@ -3,12 +3,15 @@ const OrderByABC = (props) => {
     props.handleFilterQueen({ orderValue: ev.target.value, key: "order" });
   };
   return (
-    <label htmlFor="orderABC" className="filters__label">
+    <label
+      htmlFor="orderABC"
+      className={props.isDark ? "filters__label" : "filtersD__label"}
+    >
       Order by
       <select
         id="orderABC"
         name="orderABC"
-        className="filters__select"
+        className={props.isDark ? "filters__select" : "filtersD__select"}
         onChange={handleABCInput}
       >
         <option value="A-Z">A-Z</option>

@@ -5,9 +5,15 @@ import OrderByABC from "./M-Q - OrderByABC";
 
 const Filters = (props) => {
   return (
-    <form className="filters">
-      <FilterByWinner handleFilterQueen={props.handleFilterQueen} />
-      <OrderByABC handleFilterQueen={props.handleFilterQueen} />
+    <form className={props.isDark ? "filters" : "filtersD"}>
+      <FilterByWinner
+        handleFilterQueen={props.handleFilterQueen}
+        isDark={props.isDark}
+      />
+      <OrderByABC
+        handleFilterQueen={props.handleFilterQueen}
+        isDark={props.isDark}
+      />
     </form>
   );
 };
