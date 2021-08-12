@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import HorizontalMenu from "./H - HorizontalMenu";
 
 //IMAGES
-import logo from "../images/ruLogo.png";
+import logo from "../images/ruLogo.jpeg";
 
 const Header = (props) => {
   return (
@@ -13,7 +13,11 @@ const Header = (props) => {
         to="/"
         className={props.isDark ? "header__image" : "headerD__image"}
       >
-        <img src={logo} alt="RuPaul's Drag Race Logo"></img>
+        <img
+          src={logo}
+          alt="RuPaul's Drag Race Logo"
+          className="header__logo"
+        ></img>
       </Link>
       <HorizontalMenu
         handleDarkMode={props.handleDarkMode}
