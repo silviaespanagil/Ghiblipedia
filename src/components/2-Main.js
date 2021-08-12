@@ -59,7 +59,7 @@ const Main = (props) => {
   //API GET ALL QUEENS
 
   useEffect(() => {
-    const queensURL = "http://www.nokeynoshade.party/api/queens?limit=5";
+    const queensURL = "http://www.nokeynoshade.party/api/queens/all";
 
     if (localQueens.length === 0) {
       axios.get(queensURL).then((res) => {
