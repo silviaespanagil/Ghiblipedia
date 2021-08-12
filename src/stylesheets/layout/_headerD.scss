@@ -9,6 +9,10 @@
     display: flex;
     padding-left: 2%;
   }
+  &__logo {
+    width: auto;
+    height: 50px;
+  }
   &__menu {
     display: block;
     padding-right: 2%;
