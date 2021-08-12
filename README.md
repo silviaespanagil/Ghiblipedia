@@ -1,70 +1,99 @@
-# Getting Started with Create React App
+# React App: The Unofficial Rupedia
+## _Platzi exercise_
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+¡Hola mundo!
 
-## Available Scripts
+I'm a  huge fan of RuPaul's Drag Race so, when I was asked to develop a  React  App with any Api, I went straight to the [No Key No Shade API](https://drag-race-api.readme.io/docs) and started to work. 💅 
 
-In the project directory, you can run:
+The APP allows you to see and search every single queen that has been part of RuPaul's Drag Race until season 11. User can search for an specific queen, add as much queens as it wants to a favorite list ⭐ and, if a queen is clicked, user's gonna be able to read the most famous quote 💬 the queen said during the show.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Some Requirements 📋
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Create a react app
+- Server Side Render
+- API call must be made with Node
+- Add a search bar
+- Filter and arrange the list
+- Add a favorite list
+- Add a theme switch
+- Add unitary test
+- Must be indexable
+- Responsive
 
-### `npm test`
+- 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Built with 🔨
+- Visual Code Studio: as code editor
+- SASS
+- React
+- Node
 
-### `npm run build`
+## Development ⌨️
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+For me it was  important that this was as real as any project so first thing first I created a GitHub Project to keep track of my tasks and prioritize them as better as I could 📝. It has four columns: "To Do", "Doing" and "Done", the fourth is "Info" where I wrote down some information I wanted to save for myself as something new that I  learned or the funcionality of a package I installed. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+I also created some tags 🏷️ to make it easy to understand what the task was about: "Structure", "Improvements", "Styles", "Data", "Rewatch", "Documentation", "Won't do". 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<img src="https://user-images.githubusercontent.com/81619759/128333358-666018bc-75eb-4a46-bc20-512dedc64207.png" width="400"/>
 
-### `npm run eject`
+After doing that, the coding was pretty smooth because I had some idea of how to approach everything. First of all I installed SASS because I find that SASS  along with BEM 
+methodology helps me to have a cleaner CSS code because of the nesting. 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+With SASS up, it's component time. Each part of the portfolio has it's own component so they could be reusable in other projects if I want to. I also added a  Data folder 🗃️ with two JSON files one with the facts for my "Facts" component and another with my Projects. This guarantees a 🛠️low maintenance code🛠️ as if I want to make further changes such as adding or removing things I only have to manipulate de JSON. 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![image](https://user-images.githubusercontent.com/81619759/128336864-3d11f9d1-6a7d-44f1-b785-d20d1bfb5706.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### My favs 💖
 
-## Learn More
+There are a couple things I did in the development that I'm really proud of because I learned a lot doing them and I really think make the diference.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+🙋**Random Facts**🙋
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This component is one of my favorites 💘. I wanted to show something about **me** as the person beyond the developer and had this pretty fun idea.
 
-### Code Splitting
+The component shows a random fact rendered from a JSON. The logic 🧠 behind it is that I map the JSON, run a random number generator function -number generated is and can't be longer than the JSON length- and render the fact calling the random number as the index.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The cherry on top🍒 is the shuffle button that pics a new fact and so it renders a new fact.
 
-### Analyzing the Bundle Size
+<img src="https://user-images.githubusercontent.com/81619759/128335135-65e1bc14-7a6e-43b7-82b1-8e4db8945442.gif" width="400"/><img src="https://user-images.githubusercontent.com/81619759/128339100-d9bb57e7-bc27-4e01-9f1b-a61d753067e3.png" width="600"/>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+🔼**Go top button**🔼
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+As I was scrolling in a WhatsApp conversation I noticed the arrow button that allows you to go down and I thought that the Portfolio really needed a button that scrolls to the top of the page 🔝. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+I think this functionality makes the diference for the user and is a little detail that makes the portfolio looks polished. 
 
-### Deployment
+This funcion needs the useRef() hook, and some other extra functions, one to handle the position so the button is only visible at certain scrolling point, the handler for the button and at last a scroll listener. 🖱️
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+PD: I'm thinking of doing an NPM  for  this component.
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+🍔**Burger Menu**🍔
+
+
+I know that technically I didn't do the menu, but it's my first time using a package by my own, with no more help than the documentation and I added a extra pizzaz ✨ to it.
+
+I decided to use 🍔[Burger Menu](https://www.npmjs.com/package/react-burger-menu) package but with this menu, when the user chooses an option from the menu, the menu does not close and that is  not very friendly.  So I added a funcion that closes the menu when any item of the nav is clicked.
+
+![Silvia's Portfolio (1)](https://user-images.githubusercontent.com/81619759/128342280-b8d1c857-60e1-4c96-b9de-47c47637a0f0.gif)
+
+
+## Want to clone my repository? 🐑🐑
+
+Go for it! And if you make something pretty, please show me
+
+## Do you have any idea? ✏️
+
+I'm an student and as I stated before am learning a whole lot of Front End Developing, so, if  you have any idea that I could develope please tell me so and I will try to.
+
+## License
+
+MIT
+
+## Codefactor
+
+[![CodeFactor](https://www.codefactor.io/repository/github/silviaespanagil/portfolio/badge)](https://www.codefactor.io/repository/github/silviaespanagil/portfolio)
