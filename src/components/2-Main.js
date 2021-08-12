@@ -59,14 +59,14 @@ const Main = (props) => {
   //API GET ALL QUEENS
 
   useEffect(() => {
-    const queensURL = "https://www.nokeynoshade.party/api/queens/all";
+    const queensURL = "http://www.nokeynoshade.party/api/queens?limit=5";
 
     if (localQueens.length === 0) {
       axios.get(queensURL).then((res) => {
         setQueens(res.data);
       });
     }
-  }, [queens]);
+  }, [localQueens]);
 
   //LOCAL STORAGE SET
   useEffect(() => {

@@ -26,6 +26,7 @@ const QueensList = (props) => {
           className={
             props.isDark ? "apiList__card--fav" : "apiListD__card--fav"
           }
+          aria-label="favorite icon button"
         >
           <i
             className={

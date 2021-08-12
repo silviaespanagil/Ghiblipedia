@@ -16,6 +16,7 @@
     align-items: center;
     justify-content: center;
     padding: 10%;
+    color: $colorNoBlack;
 
     @include preTablet() {
       flex-direction: row;

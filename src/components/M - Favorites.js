@@ -14,6 +14,7 @@ const Favorites = (props) => {
           id={index}
           onClick={() => props.favQueen(favorite.id)}
           className="apiList__card--fav"
+          aria-label="favorite icon button"
         >
           <i
             className={
@@ -30,7 +31,15 @@ const Favorites = (props) => {
             alt={`Portrait of ${favorite.name}`}
             className="apiList__card--content-img"
           />
-          <h2 className="apiList__card--content-name">{favorite.name}</h2>
+          <h2
+            className={
+              props.isDark
+                ? "apiList__card--content-name"
+                : "apiListD__card--content-name"
+            }
+          >
+            {favorite.name}
+          </h2>
         </article>
       </li>
     );

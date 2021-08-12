@@ -22,6 +22,7 @@ const Home = (props) => {
         resetSearch={props.resetSearch}
         favorites={props.favorites}
         favQueen={props.favQueen}
+        isDark={props.isDark}
       />
       ;
     </>
