@@ -20,7 +20,6 @@ const Header = (props) => {
         handleDarkMode={props.handleDarkMode}
         isDark={props.isDark}
       />
-      <p onClick={props.handleDarkMode}>Darkmode</p>
     </header>
   );
 };

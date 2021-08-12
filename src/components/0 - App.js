@@ -37,11 +37,7 @@ function App() {
     <>
       <div ref={refScrollUp}> </div>
       <Header handleDarkMode={handleDarkMode} isDark={isDark} />
-      <Main
-        refScrollUp={refScrollUp}
-        handleDarkMode={handleDarkMode}
-        isDark={isDark}
-      />
+      <Main refScrollUp={refScrollUp} isDark={isDark} />
     </>
   );
 }

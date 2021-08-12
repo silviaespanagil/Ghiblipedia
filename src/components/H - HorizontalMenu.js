@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
 
+//COMPONENTS
+import DarkModeButton from "./H-H - DarkModeButton";
+
 const HorizontalMenu = (props) => {
   //MENU ITEMS
 
@@ -35,6 +38,7 @@ const HorizontalMenu = (props) => {
         className={props.isDark ? "header__menu--list" : "headerD__menu--list"}
       >
         {RenderMenu}
+        <DarkModeButton handleDarkMode={props.handleDarkMode} />
       </ul>
     </nav>
   );
