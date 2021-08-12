@@ -1,14 +1,15 @@
 const DarkModeButton = (props) => {
   return (
     <li>
-      <label className="darkMode" for="checkbox">
+      <label className="darkMode" htmlFor="darkModeCheckbox">
         <input
           className="darkMode__input"
           type="checkbox"
-          id="checkbox"
+          title="darkModeButton"
+          id="darkModeCheckbox"
           onClick={props.handleDarkMode}
         />
-        <div class="darkMode__slider darkMode__slider--round"></div>
+        <div className="darkMode__slider darkMode__slider--round"></div>
       </label>
     </li>
   );
