@@ -79,6 +79,8 @@ The handler for the button does 3 things:
 
 The setBackground function changes the body of the App according to the body state, this way, all the background of my app goes dark. Other styles aree managed via a simple const called "isDark" `
   const isDark = mode === false;` that is sended via props to other components,  that way if isDark, the classes change, whereas colours also change🌈 `className={props.isDark ? "apiList__card--content-name" : "apiListD__card--content-name" }`
+  
+ When everything worked smoothly I coded the button.
 
 <img src="https://user-images.githubusercontent.com/81619759/129216639-26545870-f242-4699-b572-3c58acb98723.gif" alt="gif that shows theme toggle" width="600"/> 
 
@@ -101,3 +103,7 @@ Install dependencies
 
 Run it
 `npm start`
+
+## Codefactor 
+
+[![CodeFactor](https://www.codefactor.io/repository/github/silviaespanagil/rupedia/badge?s=3ea7a798ad97a8f0d70e440c7bb4b819328ac092)](https://www.codefactor.io/repository/github/silviaespanagil/rupedia)
