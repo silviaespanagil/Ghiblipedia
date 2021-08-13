@@ -11,7 +11,7 @@ Also for the dark mode lovers 🌛 I added, as requested, a theme toggle that ta
 
 <img src="https://user-images.githubusercontent.com/81619759/129209019-f7ab7bd2-c999-478d-bde3-f1099eb012e8.png" alt="home view" width="400"/><img src="https://user-images.githubusercontent.com/81619759/129210918-22aea7b6-884d-4d95-9058-7fe76cccd1f7.png" alt="favorite darkmode" width="400"/> 
 
-
+🚀  [Rupedia website](https://rupedia.netlify.app/#/)
 
 ## Some Requirements 📋
 
