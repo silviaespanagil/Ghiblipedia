@@ -1,5 +1,4 @@
 # React App: The Unofficial Rupedia
-## _Platzi exercise_
 
 ¡Hola mundo!
 
@@ -16,7 +15,6 @@ Also for the dark mode lovers 🌛 I added, as requested, a theme toggle that ta
 ## Some Requirements 📋
 
 - Create a react app
-- Server Side Render
 - API call must be made with Node
 - Add a search bar
 - Filter and arrange the list
@@ -86,15 +84,10 @@ The setBackground function changes the body of the App according to the body sta
 
 ### My challenges 🚩
 
-As a junior there are a lot of things I do not know...yet💪! but I really love trying things. I had 3  main challenges one of them out of my reach, another that I kinda sorted and the last one goes to my **must learn** list.
+As a junior there are a lot of things I do not know...yet💪! but I really love trying things. My main challenge was to try and do at least one unitary test, here's how that went.
 
 👩🏻‍💻 Unitary test: Until now I've never done an unitary test. Yes, until now, because as I read the 
 requirement list I said to myself  that I wanted, at  least to do one test, and after a lot of reasearch I was able to do one!💪 I took me  a lot, but I'm proud and know that I will be able to learn more about it.
-
-🖥️ API fails: The api I chose is great, but the server tends to send errors from time to time, not ideal, but it's  out of my reach to fix.
-
-😢 Server Side Render: Sadly this was little too much to chew. Before the requirement I'd never heard about it, and when I read it I thought "this is just genius ✨" and after using an API like the one I'm using I can understand how important it would  be  for SEO but also for user experience the fact that the App Renders before. However I was not able to do it on my own without prior knowledge but I definetly added this to my list of **must learn** things as I understand the importance of it.
-
 
 ## Run my code 🔧
 
